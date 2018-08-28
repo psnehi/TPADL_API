@@ -1,0 +1,11 @@
+/BSES.Models/bin/*
+/BSES.Models/obj/*
+/BSESAPI.BLL/bin/*
+/BSESAPI.BLL/obj/*
+/BSESAPI.DataLayer/bin/*
+/BSESAPI.DataLayer/obj/*
+/BSESAPI.Dto/bin/*
+/BSESAPI.Dto/obj/*
+/BSESAPI/bin/*
+/BSESAPI/logs/*
+/BSESAPI/obj/*

@@ -1,0 +1,562 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BSESModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="batch_closing_master">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kiosk_id" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="batchclosedatetime" Type="datetime" Nullable="false" />
+          <Property Name="reportbatchno" Type="int" Nullable="false" />
+          <Property Name="start_rcptno" Type="int" Nullable="false" />
+          <Property Name="end_rcptno" Type="int" Nullable="false" />
+          <Property Name="cash_rcpts" Type="int" Nullable="false" />
+          <Property Name="cash_amnt" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="chq_rcpts" Type="int" Nullable="false" />
+          <Property Name="chq_amnt" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="card_rcpts" Type="int" Nullable="false" />
+          <Property Name="card_amnt" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ttl_rcpts" Type="int" Nullable="false" />
+          <Property Name="ttl_amnt" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="token_id" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="kiosk_attendance">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kiosk_id" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="login_date_time" Type="datetime" />
+          <Property Name="log_out_time" Type="datetime" />
+          <Property Name="atpm_mchn_ip" Type="varchar" MaxLength="50" />
+          <Property Name="inserted_date" Type="datetime" Nullable="false" />
+          <Property Name="inserted_by" Type="varchar" MaxLength="20" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="tokenId" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="TransactionsDB">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Mode" Type="nchar" MaxLength="1" />
+          <Property Name="TerminalID" Type="varchar" MaxLength="50" />
+          <Property Name="USP" Type="varchar" MaxLength="50" />
+          <Property Name="CANo" Type="varchar" MaxLength="50" />
+          <Property Name="RCPTNO" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="RCPTREF" Type="varchar(max)" />
+          <Property Name="BATCHNO" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="PAYMENTMODE" Type="varchar" MaxLength="1" />
+          <Property Name="PAYMENTDATE" Type="datetime" />
+          <Property Name="BILLAMOUNT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="COLLECTIONAMT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="BATCHPAYMODEAMT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="BILLER_CATEGORY" Type="varchar" MaxLength="200" />
+          <Property Name="BILLER_ID" Type="varchar" MaxLength="200" />
+          <Property Name="BILLER_NAME" Type="varchar" MaxLength="200" />
+          <Property Name="CUST_PARAMA_DETAILS" Type="varchar(max)" />
+          <Property Name="CUSTOMER_NAME" Type="varchar(max)" />
+          <Property Name="BILL_DATE" Type="varchar" MaxLength="200" />
+          <Property Name="BILL_PERIOD" Type="varchar" MaxLength="100" />
+          <Property Name="BILL_NUMBER" Type="varchar" MaxLength="200" />
+          <Property Name="CCF" Type="varchar" MaxLength="100" />
+          <Property Name="INITIATING_CHANNEL" Type="varchar" MaxLength="50" />
+          <Property Name="TRANSACTION_ID" Type="varchar(max)" />
+          <Property Name="REFERENCE1" Type="varchar" MaxLength="20" />
+          <Property Name="REFERENCE2" Type="varchar(max)" />
+          <Property Name="REFERENCE3" Type="varchar(max)" />
+          <Property Name="REFERENCE4" Type="varchar(max)" />
+          <Property Name="REFERENCE5" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE6" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE7" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE8" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE9" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE10" Type="varchar(max)" />
+          <Property Name="REFERENCE11" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE12" Type="varchar(max)" />
+          <Property Name="REFERENCE13" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE14" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE15" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE16" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE17" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE18" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE19" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE20" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE21" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE22" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE23" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE24" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE25" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE26" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE27" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE28" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE29" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE30" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE31" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE32" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE33" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE34" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE35" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE36" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE37" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE38" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE39" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE40" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE41" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE42" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE43" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE44" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE45" Type="varchar" MaxLength="50" />
+          <Property Name="REFERENCE46" Type="nchar" MaxLength="10" />
+          <Property Name="REFERENCEDATE1" Type="datetime" />
+          <Property Name="REFERENCEDATE2" Type="datetime" />
+          <Property Name="REFERENCEINT1" Type="bigint" />
+          <Property Name="REFERENCEINT2" Type="bigint" />
+          <Property Name="REFERENCEDECIMAL1" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="REFERENCEDECIMAL2" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Denom1" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Denom2" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Denom5" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Denom10" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Denom20" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Denom50" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Denom100" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Denom500" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Denom1000" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Denom2000" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Coin1" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Coin2" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Coin5" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Coin10" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="CHEQUENO" Type="varchar" MaxLength="6" />
+          <Property Name="CHEQUEDT" Type="varchar" MaxLength="50" />
+          <Property Name="MICR" Type="varchar" MaxLength="50" />
+          <Property Name="BANKCODE" Type="varchar" MaxLength="9" />
+          <Property Name="TrType" Type="varchar" MaxLength="2" />
+          <Property Name="BR_CODE" Type="varchar" MaxLength="10" />
+          <Property Name="BankShortName" Type="varchar" MaxLength="9" />
+          <Property Name="BankName" Type="varchar" MaxLength="200" />
+          <Property Name="ACTYPE" Type="varchar" MaxLength="2" />
+          <Property Name="PostDated" Type="bit" />
+          <Property Name="ChequeReturned" Type="bit" />
+          <Property Name="FrontImage" Type="image" />
+          <Property Name="ImageName" Type="varchar" MaxLength="50" />
+          <Property Name="ImageSize" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="ReportStatus" Type="varchar" MaxLength="2" />
+          <Property Name="UPDATIONSTATUS" Type="varchar" MaxLength="50" />
+          <Property Name="UpdationMessage" Type="varchar" MaxLength="200" />
+          <Property Name="ReportBatchNo" Type="bigint" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="30" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="30" />
+          <Property Name="ENACCNO" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="ENCOLLAMT" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="update_token" Type="varchar(max)" />
+          <Property Name="Ed" Type="varchar" MaxLength="50" />
+          <Property Name="Idf" Type="varchar" MaxLength="50" />
+          <Property Name="BillCyc" Type="varchar" MaxLength="50" />
+          <Property Name="BillGrp" Type="varchar" MaxLength="50" />
+          <Property Name="ApprovalCode" Type="varchar" MaxLength="50" />
+          <Property Name="CardNo" Type="varchar" MaxLength="50" />
+          <Property Name="ExpDate" Type="varchar" MaxLength="50" />
+          <Property Name="CardType" Type="varchar" MaxLength="50" />
+          <Property Name="InvoiceNo" Type="varchar" MaxLength="50" />
+          <Property Name="mobileno" Type="bigint" />
+          <Property Name="mailid" Type="varchar" MaxLength="50" />
+          <Property Name="flag" Type="varchar" MaxLength="5" />
+          <Property Name="BRPL_BYPL_FLAG" Type="nchar" MaxLength="5" />
+          <Property Name="Bill_Due_Date" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityContainer Name="BSESModelStoreContainer">
+          <EntitySet Name="batch_closing_master" EntityType="Self.batch_closing_master" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kiosk_attendance" EntityType="Self.kiosk_attendance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TransactionsDB" EntityType="Self.TransactionsDB" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BSESModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="batch_closing_master">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kiosk_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="batchclosedatetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="reportbatchno" Type="Int32" Nullable="false" />
+          <Property Name="start_rcptno" Type="Int32" Nullable="false" />
+          <Property Name="end_rcptno" Type="Int32" Nullable="false" />
+          <Property Name="cash_rcpts" Type="Int32" Nullable="false" />
+          <Property Name="cash_amnt" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="chq_rcpts" Type="Int32" Nullable="false" />
+          <Property Name="chq_amnt" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="card_rcpts" Type="Int32" Nullable="false" />
+          <Property Name="card_amnt" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ttl_rcpts" Type="Int32" Nullable="false" />
+          <Property Name="ttl_amnt" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="token_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="kiosk_attendance">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kiosk_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="login_date_time" Type="DateTime" Precision="3" />
+          <Property Name="log_out_time" Type="DateTime" Precision="3" />
+          <Property Name="atpm_mchn_ip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="inserted_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="inserted_by" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tokenId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TransactionsDB">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Mode" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="TerminalID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="USP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CANo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RCPTNO" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="RCPTREF" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BATCHNO" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PAYMENTMODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="PAYMENTDATE" Type="DateTime" Precision="3" />
+          <Property Name="BILLAMOUNT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="COLLECTIONAMT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="BATCHPAYMODEAMT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="BILLER_CATEGORY" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="BILLER_ID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="BILLER_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CUST_PARAMA_DETAILS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CUSTOMER_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BILL_DATE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="BILL_PERIOD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BILL_NUMBER" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CCF" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="INITIATING_CHANNEL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TRANSACTION_ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE7" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE8" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE9" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE10" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE11" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE12" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE13" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE14" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE15" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE16" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE18" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE19" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE20" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE21" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE22" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE23" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE24" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE25" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE26" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE27" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE28" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE29" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE30" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE31" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE32" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE33" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE34" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE35" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE36" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE37" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE38" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE39" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE40" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE41" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE42" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE43" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE44" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE45" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFERENCE46" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="REFERENCEDATE1" Type="DateTime" Precision="3" />
+          <Property Name="REFERENCEDATE2" Type="DateTime" Precision="3" />
+          <Property Name="REFERENCEINT1" Type="Int64" />
+          <Property Name="REFERENCEINT2" Type="Int64" />
+          <Property Name="REFERENCEDECIMAL1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="REFERENCEDECIMAL2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Denom1" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Denom2" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Denom5" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Denom10" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Denom20" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Denom50" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Denom100" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Denom500" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Denom1000" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Denom2000" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Coin1" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Coin2" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Coin5" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Coin10" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CHEQUENO" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="CHEQUEDT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MICR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BANKCODE" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="TrType" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="BR_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BankShortName" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="BankName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ACTYPE" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="PostDated" Type="Boolean" />
+          <Property Name="ChequeReturned" Type="Boolean" />
+          <Property Name="FrontImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ImageName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ImageSize" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ReportStatus" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="UPDATIONSTATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UpdationMessage" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ReportBatchNo" Type="Int64" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ENACCNO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ENCOLLAMT" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="update_token" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Ed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Idf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BillCyc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BillGrp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ApprovalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CardNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ExpDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CardType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mobileno" Type="Int64" />
+          <Property Name="mailid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="flag" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="BRPL_BYPL_FLAG" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="Bill_Due_Date" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="BSESEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="batch_closing_master" EntityType="Self.batch_closing_master" />
+          <EntitySet Name="kiosk_attendance" EntityType="Self.kiosk_attendance" />
+          <EntitySet Name="TransactionsDBs" EntityType="Self.TransactionsDB" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BSESModelStoreContainer" CdmEntityContainer="BSESEntities">
+          <EntitySetMapping Name="batch_closing_master">
+            <EntityTypeMapping TypeName="BSESModel.batch_closing_master">
+              <MappingFragment StoreEntitySet="batch_closing_master">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="kiosk_id" ColumnName="kiosk_id" />
+                <ScalarProperty Name="batchclosedatetime" ColumnName="batchclosedatetime" />
+                <ScalarProperty Name="reportbatchno" ColumnName="reportbatchno" />
+                <ScalarProperty Name="start_rcptno" ColumnName="start_rcptno" />
+                <ScalarProperty Name="end_rcptno" ColumnName="end_rcptno" />
+                <ScalarProperty Name="cash_rcpts" ColumnName="cash_rcpts" />
+                <ScalarProperty Name="cash_amnt" ColumnName="cash_amnt" />
+                <ScalarProperty Name="chq_rcpts" ColumnName="chq_rcpts" />
+                <ScalarProperty Name="chq_amnt" ColumnName="chq_amnt" />
+                <ScalarProperty Name="card_rcpts" ColumnName="card_rcpts" />
+                <ScalarProperty Name="card_amnt" ColumnName="card_amnt" />
+                <ScalarProperty Name="ttl_rcpts" ColumnName="ttl_rcpts" />
+                <ScalarProperty Name="ttl_amnt" ColumnName="ttl_amnt" />
+                <ScalarProperty Name="token_id" ColumnName="token_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kiosk_attendance">
+            <EntityTypeMapping TypeName="BSESModel.kiosk_attendance">
+              <MappingFragment StoreEntitySet="kiosk_attendance">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="kiosk_id" ColumnName="kiosk_id" />
+                <ScalarProperty Name="login_date_time" ColumnName="login_date_time" />
+                <ScalarProperty Name="log_out_time" ColumnName="log_out_time" />
+                <ScalarProperty Name="atpm_mchn_ip" ColumnName="atpm_mchn_ip" />
+                <ScalarProperty Name="inserted_date" ColumnName="inserted_date" />
+                <ScalarProperty Name="inserted_by" ColumnName="inserted_by" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="tokenId" ColumnName="tokenId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransactionsDBs">
+            <EntityTypeMapping TypeName="BSESModel.TransactionsDB">
+              <MappingFragment StoreEntitySet="TransactionsDB">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Mode" ColumnName="Mode" />
+                <ScalarProperty Name="TerminalID" ColumnName="TerminalID" />
+                <ScalarProperty Name="USP" ColumnName="USP" />
+                <ScalarProperty Name="CANo" ColumnName="CANo" />
+                <ScalarProperty Name="RCPTNO" ColumnName="RCPTNO" />
+                <ScalarProperty Name="RCPTREF" ColumnName="RCPTREF" />
+                <ScalarProperty Name="BATCHNO" ColumnName="BATCHNO" />
+                <ScalarProperty Name="PAYMENTMODE" ColumnName="PAYMENTMODE" />
+                <ScalarProperty Name="PAYMENTDATE" ColumnName="PAYMENTDATE" />
+                <ScalarProperty Name="BILLAMOUNT" ColumnName="BILLAMOUNT" />
+                <ScalarProperty Name="COLLECTIONAMT" ColumnName="COLLECTIONAMT" />
+                <ScalarProperty Name="BATCHPAYMODEAMT" ColumnName="BATCHPAYMODEAMT" />
+                <ScalarProperty Name="BILLER_CATEGORY" ColumnName="BILLER_CATEGORY" />
+                <ScalarProperty Name="BILLER_ID" ColumnName="BILLER_ID" />
+                <ScalarProperty Name="BILLER_NAME" ColumnName="BILLER_NAME" />
+                <ScalarProperty Name="CUST_PARAMA_DETAILS" ColumnName="CUST_PARAMA_DETAILS" />
+                <ScalarProperty Name="CUSTOMER_NAME" ColumnName="CUSTOMER_NAME" />
+                <ScalarProperty Name="BILL_DATE" ColumnName="BILL_DATE" />
+                <ScalarProperty Name="BILL_PERIOD" ColumnName="BILL_PERIOD" />
+                <ScalarProperty Name="BILL_NUMBER" ColumnName="BILL_NUMBER" />
+                <ScalarProperty Name="CCF" ColumnName="CCF" />
+                <ScalarProperty Name="INITIATING_CHANNEL" ColumnName="INITIATING_CHANNEL" />
+                <ScalarProperty Name="TRANSACTION_ID" ColumnName="TRANSACTION_ID" />
+                <ScalarProperty Name="REFERENCE1" ColumnName="REFERENCE1" />
+                <ScalarProperty Name="REFERENCE2" ColumnName="REFERENCE2" />
+                <ScalarProperty Name="REFERENCE3" ColumnName="REFERENCE3" />
+                <ScalarProperty Name="REFERENCE4" ColumnName="REFERENCE4" />
+                <ScalarProperty Name="REFERENCE5" ColumnName="REFERENCE5" />
+                <ScalarProperty Name="REFERENCE6" ColumnName="REFERENCE6" />
+                <ScalarProperty Name="REFERENCE7" ColumnName="REFERENCE7" />
+                <ScalarProperty Name="REFERENCE8" ColumnName="REFERENCE8" />
+                <ScalarProperty Name="REFERENCE9" ColumnName="REFERENCE9" />
+                <ScalarProperty Name="REFERENCE10" ColumnName="REFERENCE10" />
+                <ScalarProperty Name="REFERENCE11" ColumnName="REFERENCE11" />
+                <ScalarProperty Name="REFERENCE12" ColumnName="REFERENCE12" />
+                <ScalarProperty Name="REFERENCE13" ColumnName="REFERENCE13" />
+                <ScalarProperty Name="REFERENCE14" ColumnName="REFERENCE14" />
+                <ScalarProperty Name="REFERENCE15" ColumnName="REFERENCE15" />
+                <ScalarProperty Name="REFERENCE16" ColumnName="REFERENCE16" />
+                <ScalarProperty Name="REFERENCE17" ColumnName="REFERENCE17" />
+                <ScalarProperty Name="REFERENCE18" ColumnName="REFERENCE18" />
+                <ScalarProperty Name="REFERENCE19" ColumnName="REFERENCE19" />
+                <ScalarProperty Name="REFERENCE20" ColumnName="REFERENCE20" />
+                <ScalarProperty Name="REFERENCE21" ColumnName="REFERENCE21" />
+                <ScalarProperty Name="REFERENCE22" ColumnName="REFERENCE22" />
+                <ScalarProperty Name="REFERENCE23" ColumnName="REFERENCE23" />
+                <ScalarProperty Name="REFERENCE24" ColumnName="REFERENCE24" />
+                <ScalarProperty Name="REFERENCE25" ColumnName="REFERENCE25" />
+                <ScalarProperty Name="REFERENCE26" ColumnName="REFERENCE26" />
+                <ScalarProperty Name="REFERENCE27" ColumnName="REFERENCE27" />
+                <ScalarProperty Name="REFERENCE28" ColumnName="REFERENCE28" />
+                <ScalarProperty Name="REFERENCE29" ColumnName="REFERENCE29" />
+                <ScalarProperty Name="REFERENCE30" ColumnName="REFERENCE30" />
+                <ScalarProperty Name="REFERENCE31" ColumnName="REFERENCE31" />
+                <ScalarProperty Name="REFERENCE32" ColumnName="REFERENCE32" />
+                <ScalarProperty Name="REFERENCE33" ColumnName="REFERENCE33" />
+                <ScalarProperty Name="REFERENCE34" ColumnName="REFERENCE34" />
+                <ScalarProperty Name="REFERENCE35" ColumnName="REFERENCE35" />
+                <ScalarProperty Name="REFERENCE36" ColumnName="REFERENCE36" />
+                <ScalarProperty Name="REFERENCE37" ColumnName="REFERENCE37" />
+                <ScalarProperty Name="REFERENCE38" ColumnName="REFERENCE38" />
+                <ScalarProperty Name="REFERENCE39" ColumnName="REFERENCE39" />
+                <ScalarProperty Name="REFERENCE40" ColumnName="REFERENCE40" />
+                <ScalarProperty Name="REFERENCE41" ColumnName="REFERENCE41" />
+                <ScalarProperty Name="REFERENCE42" ColumnName="REFERENCE42" />
+                <ScalarProperty Name="REFERENCE43" ColumnName="REFERENCE43" />
+                <ScalarProperty Name="REFERENCE44" ColumnName="REFERENCE44" />
+                <ScalarProperty Name="REFERENCE45" ColumnName="REFERENCE45" />
+                <ScalarProperty Name="REFERENCE46" ColumnName="REFERENCE46" />
+                <ScalarProperty Name="REFERENCEDATE1" ColumnName="REFERENCEDATE1" />
+                <ScalarProperty Name="REFERENCEDATE2" ColumnName="REFERENCEDATE2" />
+                <ScalarProperty Name="REFERENCEINT1" ColumnName="REFERENCEINT1" />
+                <ScalarProperty Name="REFERENCEINT2" ColumnName="REFERENCEINT2" />
+                <ScalarProperty Name="REFERENCEDECIMAL1" ColumnName="REFERENCEDECIMAL1" />
+                <ScalarProperty Name="REFERENCEDECIMAL2" ColumnName="REFERENCEDECIMAL2" />
+                <ScalarProperty Name="Denom1" ColumnName="Denom1" />
+                <ScalarProperty Name="Denom2" ColumnName="Denom2" />
+                <ScalarProperty Name="Denom5" ColumnName="Denom5" />
+                <ScalarProperty Name="Denom10" ColumnName="Denom10" />
+                <ScalarProperty Name="Denom20" ColumnName="Denom20" />
+                <ScalarProperty Name="Denom50" ColumnName="Denom50" />
+                <ScalarProperty Name="Denom100" ColumnName="Denom100" />
+                <ScalarProperty Name="Denom500" ColumnName="Denom500" />
+                <ScalarProperty Name="Denom1000" ColumnName="Denom1000" />
+                <ScalarProperty Name="Denom2000" ColumnName="Denom2000" />
+                <ScalarProperty Name="Coin1" ColumnName="Coin1" />
+                <ScalarProperty Name="Coin2" ColumnName="Coin2" />
+                <ScalarProperty Name="Coin5" ColumnName="Coin5" />
+                <ScalarProperty Name="Coin10" ColumnName="Coin10" />
+                <ScalarProperty Name="CHEQUENO" ColumnName="CHEQUENO" />
+                <ScalarProperty Name="CHEQUEDT" ColumnName="CHEQUEDT" />
+                <ScalarProperty Name="MICR" ColumnName="MICR" />
+                <ScalarProperty Name="BANKCODE" ColumnName="BANKCODE" />
+                <ScalarProperty Name="TrType" ColumnName="TrType" />
+                <ScalarProperty Name="BR_CODE" ColumnName="BR_CODE" />
+                <ScalarProperty Name="BankShortName" ColumnName="BankShortName" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="ACTYPE" ColumnName="ACTYPE" />
+                <ScalarProperty Name="PostDated" ColumnName="PostDated" />
+                <ScalarProperty Name="ChequeReturned" ColumnName="ChequeReturned" />
+                <ScalarProperty Name="FrontImage" ColumnName="FrontImage" />
+                <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+                <ScalarProperty Name="ImageSize" ColumnName="ImageSize" />
+                <ScalarProperty Name="ReportStatus" ColumnName="ReportStatus" />
+                <ScalarProperty Name="UPDATIONSTATUS" ColumnName="UPDATIONSTATUS" />
+                <ScalarProperty Name="UpdationMessage" ColumnName="UpdationMessage" />
+                <ScalarProperty Name="ReportBatchNo" ColumnName="ReportBatchNo" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="ENACCNO" ColumnName="ENACCNO" />
+                <ScalarProperty Name="ENCOLLAMT" ColumnName="ENCOLLAMT" />
+                <ScalarProperty Name="update_token" ColumnName="update_token" />
+                <ScalarProperty Name="Ed" ColumnName="Ed" />
+                <ScalarProperty Name="Idf" ColumnName="Idf" />
+                <ScalarProperty Name="BillCyc" ColumnName="BillCyc" />
+                <ScalarProperty Name="BillGrp" ColumnName="BillGrp" />
+                <ScalarProperty Name="ApprovalCode" ColumnName="ApprovalCode" />
+                <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+                <ScalarProperty Name="ExpDate" ColumnName="ExpDate" />
+                <ScalarProperty Name="CardType" ColumnName="CardType" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="mobileno" ColumnName="mobileno" />
+                <ScalarProperty Name="mailid" ColumnName="mailid" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+                <ScalarProperty Name="BRPL_BYPL_FLAG" ColumnName="BRPL_BYPL_FLAG" />
+                <ScalarProperty Name="Bill_Due_Date" ColumnName="Bill_Due_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
