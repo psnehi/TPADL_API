@@ -78,6 +78,7 @@ namespace BSESAPI.Controllers
                             }
                             if (node.FirstChild == node["d:BlockFlag"])
                             {
+                                getResponse.BlockFlag = node["d:BlockFlag"].InnerText;
 
                                 getResponse.KNumber = node["d:LegacyKNo"].InnerText;
                             }
