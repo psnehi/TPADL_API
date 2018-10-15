@@ -19,6 +19,7 @@ namespace BSESAPI.Models
         public string NetBillAmount { get; set; }
         public string BillAmount { get; set; }
         public string DueDate { get; set; }
+        public string BlockFlag { get; set; }
 
     }
 
